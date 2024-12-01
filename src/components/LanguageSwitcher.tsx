@@ -13,7 +13,7 @@ const LanguageSwitcher: React.FC = () => {
   const engButton = (
     <button
       onClick={() => changeLanguage("en")}
-      className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-105 transition-transform"
+      className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-150 transition-transform"
       aria-label="Switch to English"
     >
       <img
@@ -28,7 +28,7 @@ const LanguageSwitcher: React.FC = () => {
   const espButton = (
     <button
       onClick={() => changeLanguage("es")}
-      className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-105 transition-transform"
+      className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-150 transition-transform"
       aria-label="Cambiar a Español"
     >
       <img
