@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { HeaderProps } from "./header-types";
-import SocialLinks from "../../components/SocialIcons";
+import SocialLinks from "../../components/SocialLinks";
 import ThemeToggle from "../../components/ThemeToggle";
 
 import "./header.css";
