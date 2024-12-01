@@ -121,6 +121,6 @@ If you’d like to contribute to this project, feel free to fork the repository 
 
 - **Name**: [Jose Bohopo](https://es.linkedin.com/in/jose-bohopo)
 - **Email**: rabohopo@yahoo.es
-- **GitHub**: [Your GitHub](https://github.com/JoseBohopo)
+- **GitHub**: [Jose Bohopo](https://github.com/JoseBohopo)
 
 ---
