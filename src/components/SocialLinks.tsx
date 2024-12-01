@@ -8,6 +8,7 @@ const SocialLinks: React.FC = () => {
         href="https://github.com/JoseBohopo"
         target="_blank"
         rel="noopener noreferrer"
+        className=" hover:scale-150 transition-transform"
       >
         <FaGithub size={20} color="#FFF" />
       </a>
@@ -15,6 +16,7 @@ const SocialLinks: React.FC = () => {
         href="https://es.linkedin.com/in/jose-bohopo"
         target="_blank"
         rel="noopener noreferrer"
+        className=" hover:scale-150 transition-transform"
       >
         <FaLinkedin size={20} color="#0A66C2" />
       </a>
