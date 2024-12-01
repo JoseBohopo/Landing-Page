@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       keyframes: {
@@ -18,10 +18,7 @@ export default {
         twinkle: "twinkle 2s infinite",
         "fade-in": "fadeIn 2s ease-out",
       },
-      backgroundImage: {
-        stars: "url('https://www.transparenttextures.com/patterns/stardust.png')", // Cielo estrellado
-      },
     },
   },
   plugins: [],
-}
+};

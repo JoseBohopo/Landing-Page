@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect, useMemo } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+  useMemo,
+} from "react";
 
 type ThemeContextType = {
   theme: string;
@@ -7,13 +14,19 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<string>(() =>
-    localStorage.getItem("theme") ?? "dark"
+export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}: {
+  children: ReactNode;
+}) => {
+  const [theme, setTheme] = useState<string>(
+    () => localStorage.getItem("theme") ?? "dark"
   );
 
   useEffect(() => {
-    document.documentElement.classList.remove(theme === "dark" ? "light" : "dark");
+    document.documentElement.classList.remove(
+      theme === "dark" ? "light" : "dark"
+    );
     document.documentElement.classList.add(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
@@ -22,10 +35,13 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }: {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  return (
-    useMemo(() => <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>, [children, theme])
+  return useMemo(
+    () => (
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        {children}
+      </ThemeContext.Provider>
+    ),
+    [children, theme]
   );
 };
 

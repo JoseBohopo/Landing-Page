@@ -2,13 +2,15 @@ import { motion } from "framer-motion";
 import React from "react";
 
 type TechnologySliderProps = {
-  technologies:  {
+  technologies: {
     icon: JSX.Element;
     name: string;
-}[]
-}
+  }[];
+};
 
-const TechnologySlider: React.FC<TechnologySliderProps> = ({technologies}: TechnologySliderProps) => {
+const TechnologySlider: React.FC<TechnologySliderProps> = ({
+  technologies,
+}: TechnologySliderProps) => {
   return (
     <motion.div
       className="flex justify-center gap-x-16 p-8 w-[90%]"
