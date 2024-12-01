@@ -8,6 +8,7 @@ import TechnologySlider from "./components/TechnologySlider";
 import Main from "./sections/Main/Main";
 import { ROUTES_PATH, technologies } from "./utils/Constants";
 import { ThemeProvider } from "./context/ThemeContext";
+import "./translation/i18n.js";
 
 const App: React.FC = () => {
   const [path, setPath] = useState(ROUTES_PATH.HOME);

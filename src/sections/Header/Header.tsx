@@ -3,7 +3,13 @@ import { HeaderProps } from "./header-types";
 import SocialLinks from "../../components/SocialIcons";
 import ThemeToggle from "../../components/ThemeToggle";
 
+import "./header.css";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+
 const Header: React.FC<HeaderProps> = ({ ROUTES, onSetPath }: HeaderProps) => {
+
+  const  {t} = useTranslation()
   const centerButtonsProperties = [
     {
       targetRoute: ROUTES.HOME,
@@ -18,26 +24,28 @@ const Header: React.FC<HeaderProps> = ({ ROUTES, onSetPath }: HeaderProps) => {
   const renderCenterButtons = centerButtonsProperties.map((element) => (
     <button
       key={element.targetRoute}
-      className=" bg-transparent"
+      className="custom-btn btn"
       onClick={() => onSetPath(element.targetRoute)}
     >
-      {element.targetRoute}
+      <span>{t(element.targetRoute)}</span>
     </button>
   ));
   return (
-    <header className="shadow-md sticky top-0 z-10  p-4 text-black dark:text-white flex justify-center space-x-8">
+    <header className="shadow-md  p-4 text-black dark:text-white">
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex justify-center align-middle inset-0 origin-center h-full w-full"
+        className="flex justify-center align-middle h-full w-full gap-5"
       >
         {/* Header */}
         {renderCenterButtons}
-        <div className="translate-x-[30rem] flex items-center gap-2"><ThemeToggle/> <SocialLinks /></div>
+        <div className="translate-x-[25rem] flex items-center">
+          <LanguageSwitcher /> <ThemeToggle /> <SocialLinks />
+        </div>
       </motion.div>
     </header>
   );
-}
+};
 
-export default Header
+export default Header;
