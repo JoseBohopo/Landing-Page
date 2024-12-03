@@ -6,12 +6,6 @@ import {
   SiStyledcomponents,
 } from "react-icons/si";
 
-export const ROUTES_PATH = {
-  HOME: "HOME",
-  ABOUT: "ABOUT",
-  PROJECTS: "PROJECTS",
-};
-
 export const technologies = [
   { icon: <FaReact size={50} width={50} color="#61dafb" />, name: "React" },
   { icon: <FaNodeJs size={50} color="#68A063" />, name: "Node.js" },

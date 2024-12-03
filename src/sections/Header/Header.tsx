@@ -1,53 +1,40 @@
+import React from "react";
 import { motion } from "framer-motion";
-import { HeaderProps } from "./header-types";
-import SocialLinks from "../../components/SocialLinks";
-import ThemeToggle from "../../components/ThemeToggle";
 
 import "./header.css";
-import LanguageSwitcher from "../../components/LanguageSwitcher";
-import { useTranslation } from "react-i18next";
 
-const Header: React.FC<HeaderProps> = ({ ROUTES, onSetPath }: HeaderProps) => {
-  const { t } = useTranslation();
-  const centerButtonsProperties = [
-    {
-      targetRoute: ROUTES.HOME,
-    },
-    {
-      targetRoute: ROUTES.ABOUT,
-    },
-    {
-      targetRoute: ROUTES.PROJECTS,
-    },
-  ];
-  const renderCenterButtons = centerButtonsProperties.map((element) => (
-    <button
-      key={element.targetRoute}
-      className="custom-btn btn"
-      onClick={() => onSetPath(element.targetRoute)}
-    >
-      <span>{t(element.targetRoute)}</span>
-    </button>
-  ));
+import LanguageSwitcher from "../../components/LanguageSwitcher";
+import SocialLinks from "../../components/SocialLinks";
+import ThemeToggle from "../../components/ThemeToggle";
+import HeaderNavigationButtons from "../../components/HeaderNavigationButtons";
+import { Dispatch, SetStateAction } from "react";
+
+const Header: React.FC<{ onSetPath: Dispatch<SetStateAction<string>> }> = ({
+  onSetPath,
+}) => {
   return (
-    <header className="font-coco p-8 text-black dark:text-white">
+    <header className="font-coco p-6 md:p-8 text-black dark:text-white">
       <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex justify-between align-middle h-full w-full"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex justify-between items-center h-full w-full"
+        aria-label="Main Header"
       >
-        {/* Header */}
-        <span className="font-coco logo-initials font-bold text-4xl pt-0.5 bg-gradient-to-r from-teal-400  to-indigo-500 text-transparent bg-clip-text  hover:from-indigo-500 hover:to-teal-400 transition-all duration-300">
+        <span className="font-coco logo-initials font-bold text-sm lg:text-4xl bg-gradient-to-r from-teal-400 to-indigo-500 text-transparent bg-clip-text hover:from-indigo-500 hover:to-teal-400 transition-all duration-300">
           JB
         </span>
-        <div>{renderCenterButtons}</div>
-        <div className="flex items-center">
-          <LanguageSwitcher /> <ThemeToggle /> <SocialLinks />
+        <nav aria-label="Primary Navigation" className="flex items-center">
+          <HeaderNavigationButtons onSetPath={onSetPath} />
+        </nav>
+        <div className="flex items-center space-x-4">
+          <LanguageSwitcher />
+          <ThemeToggle aria-label="Switch between dark and light mode" />
+          <SocialLinks aria-label="Change language" />
         </div>
       </motion.div>
     </header>
   );
 };
 
-export default Header;
+export default React.memo(Header);
