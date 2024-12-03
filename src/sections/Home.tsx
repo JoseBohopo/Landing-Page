@@ -11,14 +11,13 @@ const Home: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="h-full py-16 px-6"
+      className="h-full py-8 lg:py-16 px-6"
       aria-labelledby="home-title"
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
-        {/*Professional Image*/}
+        {/*TODO:Professional Image*/}
         <div
           className="w-full md:w-1/3 flex justify-center"
-          role="img"
           aria-label={t("home.photoAlt")}
         >
           <img
@@ -28,19 +27,15 @@ const Home: React.FC = () => {
           />
         </div>
 
-        {/* Introduction Text */}
         <div className="w-full md:w-2/3 text-center md:text-left">
-          {/* Título */}
           <h1 id="home-title" className="text-4xl md:text-5xl font-bold">
             {t("home.title")}
           </h1>
           <h2 className="text-xl md:text-2xl font-medium mt-2">
             {t("home.subtitle")}
           </h2>
-
-          {/* Description */}
           <p
-            className="mt-6 text-lg leading-relaxed w-3/4"
+            className="mt-6 text-lg leading-relaxed w-full lg:w-3/4"
             dangerouslySetInnerHTML={{ __html: t("home.description") }}
           />
         </div>
