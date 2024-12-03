@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
-  const [langSelected, setLangSelected] = useState("");
+  const [langSelected, setLangSelected] = useState(
+    window.localStorage.getItem("i18nextLng")
+  );
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
