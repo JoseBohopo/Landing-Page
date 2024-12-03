@@ -5,6 +5,7 @@ import "./translation/i18n.js";
 import { technologies } from "./utils/Constants";
 import { ThemeProvider } from "./context/ThemeContext";
 import "./index.css";
+import "./App.css";
 
 import Header from "./sections/Header/Header";
 import Main from "./sections/Main/Main";
@@ -16,18 +17,16 @@ const App: React.FC = () => {
   return (
     <ThemeProvider>
       <motion.div
-        className="min-h-screen flex flex-col bg-gradient-to-r dark:bg-gradient-to-b from-teal-400 via-blue-500 to-indigo-500
- dark:from-black dark:via-indigo-900 dark:to-black p-4"
+        className="app-container bg-gradient-to-r dark:bg-gradient-to-b from-teal-400 via-blue-500 to-indigo-500
+ dark:from-black dark:via-indigo-900 dark:to-black"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         aria-label="Application Container"
       >
         <Header onSetPath={setPath} />
-        <main className="flex-grow mt-8">
-          <Main path={path} />
-        </main>
-        <footer className="mt-8">
+        <Main path={path} />
+        <footer className="mt-4 lg:mt-8">
           <TechnologySlider technologies={technologies} />
         </footer>
       </motion.div>
@@ -35,4 +34,4 @@ const App: React.FC = () => {
   );
 };
 
-export default React.memo(App);
+export default App;

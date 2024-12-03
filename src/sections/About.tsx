@@ -30,7 +30,6 @@ const About: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div
               className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0 bg-gradient-to-r from-teal-500 to-indigo-500 p-2 rounded-full shadow-md"
-              role="img"
               aria-label={t("about.title")}
             >
               <img
@@ -39,8 +38,6 @@ const About: React.FC = () => {
                 className="w-48 h-48 rounded-full shadow-lg"
               />
             </div>
-
-            {/* Description */}
             <div
               className="w-full md:w-2/3 md:pl-10"
               aria-describedby="about-description"

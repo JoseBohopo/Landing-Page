@@ -8,7 +8,7 @@ const Projects: React.FC = () => {
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.8, opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-center relative"
+      className="text-center relative h-full"
     >
       <h1 className="text-4xl font-bold mb-4">My Projects</h1>
       <p className="text-lg text-gray-200">
