@@ -21,4 +21,4 @@ const HeaderNavigationButtons: React.FC<{
   );
 };
 
-export default React.memo(HeaderNavigationButtons);
+export default HeaderNavigationButtons;
