@@ -38,7 +38,7 @@ const resources = {
       description: "Descubre mis proyectos, habilidades y experiencias.",
       HOME: "INICIO",
       ABOUT: "SOBRE MI",
-      PROJECTS: "PROJECTOS",
+      PROJECTS: "PROYECTOS",
       home: {
         title: "José Bohopo",
         subtitle: "Desarrollador Web",

@@ -1,17 +1,10 @@
-import React from "react";
-import Home from "../Home";
-import About from "../About";
-import Projects from "../Projects";
-import { MainProps } from "./main-types";
+import React, { Suspense } from "react";
+import { ROUTES_MAP } from "../../routes";
 
-const Main: React.FC<MainProps> = ({ ROUTES, path }: MainProps) => {
-  const routeRender = {
-    [ROUTES.HOME]: <Home />,
-    [ROUTES.ABOUT]: <About />,
-    [ROUTES.PROJECTS]: <Projects />,
-  };
-
-  return routeRender[path];
+const Main: React.FC<{ path: string }> = ({ path }) => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>{ROUTES_MAP.get(path)}</Suspense>
+  );
 };
 
-export default Main;
+export default React.memo(Main);
