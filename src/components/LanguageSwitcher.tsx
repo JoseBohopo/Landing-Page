@@ -33,7 +33,7 @@ const LanguageSwitcher: React.FC = () => {
     <div className="flex justify-center gap-4 my-4">
       <button
         onClick={() => changeLanguage(selectedLang)}
-        className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-105 transition-transform"
+        className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-150 transition-transform"
         aria-label={ariaLabel}
       >
         <img
