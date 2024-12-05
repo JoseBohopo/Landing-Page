@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { HeaderProps } from "./header-types";
-import SocialLinks from "../../components/SocialIcons";
+import SocialLinks from "../../components/SocialLinks";
 import ThemeToggle from "../../components/ThemeToggle";
 
 import "./header.css";
@@ -8,8 +8,7 @@ import LanguageSwitcher from "../../components/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
 const Header: React.FC<HeaderProps> = ({ ROUTES, onSetPath }: HeaderProps) => {
-
-  const  {t} = useTranslation()
+  const { t } = useTranslation();
   const centerButtonsProperties = [
     {
       targetRoute: ROUTES.HOME,
@@ -31,16 +30,19 @@ const Header: React.FC<HeaderProps> = ({ ROUTES, onSetPath }: HeaderProps) => {
     </button>
   ));
   return (
-    <header className="shadow-md  p-4 text-black dark:text-white">
+    <header className="font-coco p-8 text-black dark:text-white">
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex justify-center align-middle h-full w-full gap-5"
+        className="flex justify-between align-middle h-full w-full"
       >
         {/* Header */}
-        {renderCenterButtons}
-        <div className="translate-x-[25rem] flex items-center">
+        <span className="font-coco logo-initials font-bold text-4xl pt-0.5 bg-gradient-to-r from-teal-400  to-indigo-500 text-transparent bg-clip-text  hover:from-indigo-500 hover:to-teal-400 transition-all duration-300">
+          JB
+        </span>
+        <div>{renderCenterButtons}</div>
+        <div className="flex items-center">
           <LanguageSwitcher /> <ThemeToggle /> <SocialLinks />
         </div>
       </motion.div>

@@ -4,6 +4,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        coco: ["Coco", "sans-serif"],
+        balqis: ["Balqis", "cursive"],
+        archivo: ["Archivo", "sans-serif"],
+      },
       keyframes: {
         twinkle: {
           "0%, 100%": { opacity: 1 },
