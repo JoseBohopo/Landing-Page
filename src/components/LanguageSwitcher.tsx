@@ -3,51 +3,46 @@ import { useTranslation } from "react-i18next";
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
-  const [langSelected, setLangSelected] = useState(
-    window.localStorage.getItem("i18nextLng")
-  );
+  const [langSelected, setLangSelected] = useState(i18n.language);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setLangSelected(lng);
   };
 
-  const engButton = (
-    <button
-      onClick={() => changeLanguage("en")}
-      className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-105 transition-transform"
-      aria-label="Switch to English"
-    >
-      <img
-        src="../../public/united-kingdom-flag.png"
-        alt="English"
-        aria-label="Uk flag icons created by Freepik - Flaticon"
-        className="w-full h-full"
-      />
-    </button>
-  );
-
-  const espButton = (
-    <button
-      onClick={() => changeLanguage("es")}
-      className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-105 transition-transform"
-      aria-label="Cambiar a Español"
-    >
-      <img
-        src="../../public/spain-flag.png"
-        alt="Español"
-        aria-label="Spain icons created by Freepik - Flaticon"
-        className="w-full h-full"
-      />
-    </button>
-  );
-
-  const renderLangSelectedButton =
-    langSelected === "es" ? engButton : espButton;
+  const conditionalButton = {
+    es: {
+      selectedLang: "en",
+      ariaLabel: "Switch to English",
+      flag: "united-kingdom-flag.png",
+      alt: "English",
+    },
+    en: {
+      ariaLabel: "Cambiar a Español",
+      selectedLang: "es",
+      flag: "spain-flag.png",
+      alt: "Español",
+    },
+  };
+  const { selectedLang, ariaLabel, flag, alt } =
+    langSelected === conditionalButton.en.selectedLang
+      ? conditionalButton.es
+      : conditionalButton.en;
 
   return (
     <div className="flex justify-center gap-4 my-4">
-      {renderLangSelectedButton}
+      <button
+        onClick={() => changeLanguage(selectedLang)}
+        className="w-5 h-5 p-0 rounded-full overflow-hidden focus:outline-none hover:scale-105 transition-transform"
+        aria-label={ariaLabel}
+      >
+        <img
+          src={`../../public/${flag}`}
+          alt={alt}
+          id="flagImage"
+          className="w-full h-full"
+        />
+      </button>
     </div>
   );
 };
