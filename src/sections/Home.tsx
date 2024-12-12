@@ -11,7 +11,7 @@ const Home: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="h-full py-8 lg:py-16 px-6"
+      className="h-full "
       aria-labelledby="home-title"
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10">

@@ -7,17 +7,19 @@ const HeaderNavigationButtons: React.FC<{
 }> = ({ onSetPath }) => {
   const { t } = useTranslation();
   return (
-    <>
+    <ul className="flex">
       {[...ROUTES_MAP.keys()].map((element) => (
-        <button
-          key={element}
-          className="custom-btn btn mx-2"
-          onClick={() => onSetPath(element)}
-        >
-          <span>{t(element)}</span>
-        </button>
+        <li>
+          <button
+            key={element}
+            className="custom-btn btn cursor-pointer"
+            onClick={() => onSetPath(element)}
+          >
+            <span>{t(element)}</span>
+          </button>
+        </li>
       ))}
-    </>
+    </ul>
   );
 };
 
