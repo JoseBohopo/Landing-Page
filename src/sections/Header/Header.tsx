@@ -27,7 +27,7 @@ const Header: React.FC<{ onSetPath: Dispatch<SetStateAction<string>> }> = ({
         <nav aria-label="Primary Navigation" className="flex items-center">
           <HeaderNavigationButtons onSetPath={onSetPath} />
         </nav>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center">
           <LanguageSwitcher />
           <ThemeToggle aria-label="Switch between dark and light mode" />
           <SocialLinks aria-label="Change language" />
