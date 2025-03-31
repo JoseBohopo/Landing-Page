@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -43,12 +43,9 @@ const About: React.FC = () => {
               aria-describedby="about-description"
             >
               {[1, 2, 3, 4].map((index) => (
-                <p
-                  key={index}
-                  id={index === 1 ? "about-description" : undefined}
-                  className="text-lg text-gray-100 mb-4"
-                  dangerouslySetInnerHTML={{ __html: t(`about.description${index}`) }}
-                />
+                <div key={index} id={index === 1 ? "about-description" : undefined} className="text-lg text-gray-100 mb-4">
+                  <Trans i18nKey={`about.description${index}`} components={{ strong: <strong /> }} />
+                </div>
               ))}
 
               <div className="mt-6">
