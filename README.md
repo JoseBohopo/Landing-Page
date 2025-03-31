@@ -4,7 +4,7 @@
 
 This project is a professional landing page designed to showcase the profile of a **Mid-Senior Software Engineer**. The page is optimized to highlight skills, experience, and technologies in a modern and professional way, with support for **light/dark mode**.
 
-<b>Link:</b><a>https://landing-page-psi-five-53.vercel.app</a>
+<b>Link:</b> <a>https://landing-page-psi-five-53.vercel.app</a>
 
 ## **Key Features**
 
